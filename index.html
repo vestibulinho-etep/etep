@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETEP - Escola Técnica de Paulínia</title>
+    <meta name="description" content="Escola Técnica de Paulínia - Oferecemos cursos técnicos em Química e Enfermagem com excelência e tradição na educação profissional.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'etep-red': '#AE1F24',
+                        'etep-red-dark': '#8B1E22',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans">
+    
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="img/LogoETEP_horizontal.png" alt="ETEP Logo" class="h-10 w-auto mr-3">
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-etep-red transition-colors font-medium">Início</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-etep-red transition-colors font-medium">Sobre</a>
+                    <a href="#cursos" class="text-gray-700 hover:text-etep-red transition-colors font-medium">Cursos</a>
+                    <a href="#contato" class="text-gray-700 hover:text-etep-red transition-colors font-medium">Contato</a>
+                    <a href="vestibulinho.html" class="btn-etep text-white px-6 py-2 rounded-full font-medium">
+                        Vestibulinho 2025
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-etep-red focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#inicio" class="block px-3 py-2 text-gray-700 hover:text-etep-red">Início</a>
+                <a href="#sobre" class="block px-3 py-2 text-gray-700 hover:text-etep-red">Sobre</a>
+                <a href="#cursos" class="block px-3 py-2 text-gray-700 hover:text-etep-red">Cursos</a>
+                <a href="#contato" class="block px-3 py-2 text-gray-700 hover:text-etep-red">Contato</a>
+                <a href="vestibulinho.html" class="block px-3 py-2 bg-etep-red text-white rounded-lg mx-3 text-center">
+                    Vestibulinho 2025
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen bg-etep-gradient flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <span class="block">Escola Técnica</span>
+                <span class="block text-etep-red">de Paulínia</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
+                Escola <strong>pública municipal</strong> de Paulínia, formando profissionais qualificados há mais de <strong>30 anos</strong>
+                com excelência em educação técnica e compromisso com o futuro
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#cursos" class="btn-etep px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg">
+                    <i class="fas fa-graduation-cap mr-2"></i>
+                    Conheça Nossos Cursos
+                </a>
+                <a href="vestibulinho.html" class="bg-white text-etep-red px-8 py-4 rounded-full text-lg font-semibold border-2 border-white hover:bg-transparent hover:text-white transition-all">
+                    <i class="fas fa-edit mr-2"></i>
+                    Vestibulinho 2025
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 opacity-20">
+            <i class="fas fa-flask text-6xl text-white animate-pulse"></i>
+        </div>
+        <div class="absolute bottom-32 right-16 opacity-20">
+            <i class="fas fa-user-nurse text-5xl text-white animate-pulse"></i>
+        </div>
+        <div class="absolute top-1/2 left-1/4 opacity-10">
+            <i class="fas fa-microscope text-7xl text-white"></i>
+        </div>
+    </section>
+
+    <!-- Sobre a ETEP -->
+    <section id="sobre" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Sobre a ETEP</h2>
+                <div class="w-20 h-1 bg-etep-red mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A Escola Técnica de Paulínia é uma instituição pública municipal dedicada à formação de profissionais técnicos qualificados para o mercado de trabalho, localizada na região metropolitana de Campinas.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="info-card bg-white p-8 rounded-xl shadow-lg text-center card-hover">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                        <img src="img/Enem_logo.png" alt="Logo ENEM" class="w-16 h-16 object-contain">
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">1º Lugar</h3>
+                    <p class="text-gray-600">melhor nota do ENEM 2024 entre as escolas de Paulínia</p>
+                </div>
+                
+                <div class="info-card bg-white p-8 rounded-xl shadow-lg text-center card-hover">
+                    <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4"><span class="counter" data-count="90">0</span>%</h3>
+                    <p class="text-gray-600">alunos formados e inseridos no mercado de trabalho anualmente</p>
+                </div>
+                
+                <div class="info-card bg-white p-8 rounded-xl shadow-lg text-center card-hover">
+                    <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4"><span class="counter" data-count="79">0</span>%</h3>
+                    <p class="text-gray-600">aprovados em universidades públicas em 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursos -->
+    <section id="cursos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Nossos Cursos</h2>
+                <div class="flex flex-col items-center mb-8">
+                    <img src="img/crq.jpg" alt="Selo de Qualidade CRQ-SP" class="w-40 h-40 mb-4 shadow-lg rounded-full border-4 border-blue-200">
+                    <p class="text-center text-blue-900 font-semibold">
+                        Curso Técnico em Química certificado com o
+                        <a href="https://crqsp.org.br/selo-de-qualidade-cursos-tecnicos/" target="_blank" class="underline text-blue-700 hover:text-blue-900">Selo de Qualidade CRQ-IV/SP</a>.<br>
+                        Reconhecimento concedido pelo Conselho Regional de Química de São Paulo para cursos que atendem aos mais altos padrões de qualidade em infraestrutura, corpo docente e formação profissional.<br>
+                        <span class="text-sm text-gray-600">Validade: 2024-2027</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Curso 1: Técnico em Química Integrado -->
+                <div class="course-card relative p-8 rounded-xl shadow-lg card-hover flex flex-col h-full">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-br from-etep-red to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-flask text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Técnico em Química</h3>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+                            Integrado ao Ensino Médio
+                        </span>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-etep-red mr-3"></i>
+                            <span class="text-gray-700">Período Integral</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar text-etep-red mr-3"></i>
+                            <span class="text-gray-700">3 anos</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-certificate text-etep-red mr-3"></i>
+                            <span class="text-gray-700">Ensino Médio + Técnico</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <p class="text-gray-600 mb-6">
+                            Formação completa que combina o ensino médio com a preparação técnica em química, preparando o aluno para o mercado de trabalho e ensino superior.
+                        </p>
+                        
+                        <div id="details-quimica-integrado" class="hidden space-y-3 mb-6">
+                            <h4 class="font-semibold text-gray-900">Diferenciais:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Aulas no período noturno</li>
+                                <li>• Laboratórios equipados</li>
+                                <li>• Professores especialistas</li>
+                                <li>• Parcerias com indústrias da região</li>
+                                <li>• Estágio supervisionado</li>
+                                <li>• Ensino Médio focado em vestibulres UNICAMP, USP, UNESP e ENEM</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-3 mt-auto">
+                        <button onclick="toggleCourseDetails('quimica-integrado')" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors">
+                            Ver Mais
+                        </button>
+                        <a href="#contato" class="flex-1 btn-etep text-white px-4 py-2 rounded-lg font-medium text-center">
+                            Inscrever-se
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Curso 2: Técnico em Química Subsequente -->
+                <div class="course-card relative p-8 rounded-xl shadow-lg card-hover flex flex-col h-full">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-br from-etep-red to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-vial text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Técnico em Química</h3>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
+                            Subsequente
+                        </span>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-moon text-etep-red mr-3"></i>
+                            <span class="text-gray-700">Período Noturno</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar text-etep-red mr-3"></i>
+                            <span class="text-gray-700">2 anos</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-flask text-etep-red mr-3"></i>
+                            <span class="text-gray-700">Área Química</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <p class="text-gray-600 mb-6">
+                            Curso técnico para quem já possui ensino médio completo e busca especialização profissional na área química.
+                        </p>
+                        
+                        <div id="details-quimica-subsequente" class="hidden space-y-3 mb-6">
+                            <h4 class="font-semibold text-gray-900">Áreas de Atuação:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Indústrias químicas e petroquímicas</li>
+                                <li>• Laboratórios de análise e controle de qualidade</li>
+                                <li>• Indústria farmacêutica</li>
+                                <li>• Tratamento de água e efluentes</li>
+                                <li>• Pesquisa e desenvolvimento</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-3 mt-auto">
+                        <button onclick="toggleCourseDetails('quimica-subsequente')" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors">
+                            Ver Mais
+                        </button>
+                        <a href="#contato" class="flex-1 btn-etep text-white px-4 py-2 rounded-lg font-medium text-center">
+                            Inscrever-se
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Curso 3: Técnico em Enfermagem -->
+                <div class="course-card relative p-8 rounded-xl shadow-lg card-hover flex flex-col h-full">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-br from-etep-red to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-nurse text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Técnico em Enfermagem</h3>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                            Subsequente
+                        </span>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-sun text-etep-red mr-3"></i>
+                            <span class="text-gray-700">Período Matutino</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar text-etep-red mr-3"></i>
+                            <span class="text-gray-700">2 anos</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-heart text-etep-red mr-3"></i>
+                            <span class="text-gray-700">Área da Saúde</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <p class="text-gray-600 mb-6">
+                            Formação técnica na área da saúde, preparando profissionais para atuar no cuidado e assistência à saúde da população.
+                        </p>
+                        
+                        <div id="details-enfermagem" class="hidden space-y-3 mb-6">
+                            <h4 class="font-semibold text-gray-900">Campos de Atuação:</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Hospitais e clínicas</li>
+                                <li>• Unidades básicas de saúde</li>
+                                <li>• Home care</li>
+                                <li>• Empresas (saúde ocupacional)</li>
+                                <li>• Laboratórios de análises clínicas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-3 mt-auto">
+                        <button onclick="toggleCourseDetails('enfermagem')" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors">
+                            Ver Mais
+                        </button>
+                        <a href="#contato" class="flex-1 btn-etep text-white px-4 py-2 rounded-lg font-medium text-center">
+                            Inscrever-se
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Entre em Contato</h2>
+                <div class="w-20 h-1 bg-etep-red mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">
+                    Estamos prontos para esclarecer suas dúvidas e ajudar você a iniciar sua jornada profissional
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contato Principal -->
+                    <div class="space-y-8">
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-etep-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Endereço</h4>
+                                    <p class="text-gray-600">Av. Constante Pavan, 1001 - Betel<br>Paulínia, SP - CEP 13148-160</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-etep-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Telefones</h4>
+                                    <p class="text-gray-600">
+                                        (19) 3884-7708 - Secretaria<br>
+                                        (19) 3884-7742 - Gestão Escolar
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-etep-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">E-mail</h4>
+                                    <p class="text-gray-600">etep@etep.com.br</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Redes Sociais -->
+                    <div class="space-y-8">
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-etep-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fab fa-instagram text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Instagram</h4>
+                                    <a href="https://www.instagram.com/etep_paulinia/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-etep-red transition-colors">@etep_paulinia</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-etep-red rounded-full flex items-center justify-center mr-4">
+                                    <i class="fab fa-whatsapp text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">WhatsApp</h4>
+                                    <a href="https://whatsapp.com/channel/0029VaNRIQ472WTnDKZ3N51d" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-etep-red transition-colors">Canal "ETEP - Oficial"</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mapa/Localização -->
+                <div class="mt-12 bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Como Chegar</h3>
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-car text-blue-600 text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">De Carro</h4>
+                            <p class="text-gray-600 text-sm">Estacionamento disponível na escola e proximidades</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-bus text-green-600 text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Transporte Público</h4>
+                            <p class="text-gray-600 text-sm">Linhas de ônibus com paradas próximas à escola</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-map-marked-alt text-purple-600 text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Localização</h4>
+                            <p class="text-gray-600 text-sm">Região do Betel, próximo ao centro de Paulínia</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Botão do Google Maps -->
+                    <div class="text-center">
+                        <a href="https://maps.app.goo.gl/12fsfWPdDFYnsdWG9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 bg-etep-red text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-map-marker-alt mr-3 text-xl"></i>
+                            Ver no Google Maps
+                        </a>
+                        <p class="text-gray-600 text-sm mt-3">Clique para abrir a localização no Google Maps e obter direções</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="img/LogoETEP_horizontal.png" alt="ETEP Logo" class="h-8 w-auto mr-3">
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Escola Técnica de Paulínia - Formando profissionais qualificados com excelência e tradição.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/etep_paulinia" target="_blank" class="text-gray-400 hover:text-etep-red transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://whatsapp.com/channel/0029VaNRIQ472WTnDKZ3N51d" target="_blank" class="text-gray-400 hover:text-etep-red transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Cursos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#cursos" class="hover:text-white transition-colors">Técnico em Química Integrado</a></li>
+                        <li><a href="#cursos" class="hover:text-white transition-colors">Técnico em Química Subsequente</a></li>
+                        <li><a href="#cursos" class="hover:text-white transition-colors">Técnico em Enfermagem</a></li>
+                        <li><a href="vestibulinho.html" class="hover:text-white transition-colors">Vestibulinho 2025</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Úteis</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#sobre" class="hover:text-white transition-colors">Sobre a ETEP</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Portal do Aluno</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Calendário Acadêmico</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Biblioteca</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">APM</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            (19) 3884-7708
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            contato@etep.com.br
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-2 mt-1"></i>
+                            <span>Av. Constante Pavan, 1001<br>Betel - Paulínia/SP</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 ETEP - Escola Técnica de Paulínia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

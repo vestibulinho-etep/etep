@@ -1,0 +1,379 @@
+/* Tailwind CSS será carregado via CDN no HTML */
+
+/* Cores personalizadas da ETEP */
+:root {
+  --etep-red: #AE1F24;
+  --etep-gradient-start: #ffffff;
+  --etep-gradient-end: #000000;
+}
+
+/* Classes personalizadas */
+.etep-red {
+  color: var(--etep-red);
+}
+
+.bg-etep-red {
+  background-color: var(--etep-red);
+}
+
+.bg-etep-gradient {
+  background: linear-gradient(135deg, var(--etep-gradient-start) 0%, #f8f9fa 25%, #e9ecef  50%, #6c757d  75%, var(--etep-gradient-end) 100%);
+}
+
+/* Animações personalizadas */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(174, 31, 36, 0.1), 0 10px 10px -5px rgba(174, 31, 36, 0.04);
+}
+
+/* Efeito parallax suave */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Loading animation para cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Gradiente para botões */
+.btn-etep {
+  background: linear-gradient(45deg, var(--etep-red), #d63384);
+  transition: all 0.3s ease;
+}
+
+.btn-etep:hover {
+  background: linear-gradient(45deg, #d63384, var(--etep-red));
+  transform: translateY(-2px);
+}
+
+/* Estilo para navegação */
+.nav-blur {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Cards dos cursos */
+.course-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(174, 31, 36, 0.1);
+}
+
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--etep-red), #d63384);
+}
+
+/* Responsividade adicional */
+@media (max-width: 768px) {
+  .card-hover:hover {
+    transform: none;
+  }
+}
+
+/* Animações para mensagens */
+@keyframes slideProgress {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+.message-progress > div {
+    animation: slideProgress 5s linear forwards;
+}
+
+/* Estilos específicos para o Vestibulinho */
+.vestibulinho-header {
+    background: linear-gradient(135deg, #AE1F24 0%, #8B1E22 100%);
+    padding: 4rem 0;
+    color: white;
+}
+
+.vestibulinho-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.vestibulinho-card-static {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.vestibulinho-card:hover {
+    transform: translateY(-5px);
+}
+
+.form-section {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-section h3 {
+    color: #AE1F24;
+    margin-bottom: 1.5rem;
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-badge.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-badge.closed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #AE1F24;
+    top: 0;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: calc(50% - 2rem);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-date {
+    color: #AE1F24;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.btn-vestibulinho {
+    background: #AE1F24;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-vestibulinho:hover {
+    background: #8B1E22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-vestibulinho {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-vestibulinho th {
+    background: #AE1F24;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
+
+.table-vestibulinho td {
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.table-vestibulinho tr:hover {
+    background: #f8f9fa;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 1rem;
+    }
+
+    .timeline-content {
+        width: calc(100% - 3rem);
+        margin-left: 3rem !important;
+    }
+
+    .vestibulinho-header {
+        padding: 2rem 0;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Estilos para formulários */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #AE1F24;
+    box-shadow: 0 0 0 2px rgba(174, 31, 36, 0.1);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+    width: 100% !important;
+    display: block;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: #AE1F24;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    background-color: #8B1E22;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    transform: translateY(-1px);
+}
+
+/* Campos readonly */
+.form-group input[readonly],
+.form-group textarea[readonly],
+.form-group select[readonly] {
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+    color: #6c757d;
+    box-shadow: none;
+}
+
+/* Estilos para impressão */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .btn-vestibulinho,
+    .btn-primary,
+    .btn-secondary {
+        display: none;
+    }
+
+    .vestibulinho-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+    }
+} 

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial do Vestibulinho</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'etep-red': '#AE1F24',
+                        'etep-red-dark': '#8B1E22',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="vestibulinho-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Vestibulinho ETEP 2025</h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 animate-fade-in">
+                Sua porta de entrada para uma formação técnica de excelência
+            </p>
+            <div class="flex items-center justify-center space-x-4">
+                <a href="#informacoes-importantes" class="btn-vestibulinho bg-white !text-[#AE1F24] hover:bg-white hover:shadow-md">
+                    <i class="far fa-calendar-alt mr-2"></i>
+                    Inscrições até 31/12/2024
+                </a>
+                <a href="consulta.html" class="btn-vestibulinho bg-white !text-[#AE1F24] hover:bg-white hover:shadow-md">
+                    <i class="fas fa-search mr-2"></i>
+                    Consultar Inscrição
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section id="informacoes-importantes" class="mb-16 scroll-mt-24">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Informações Importantes</h2>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-red-50 p-6 border-b border-red-100">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-exclamation-circle text-white text-xl"></i>
+                    </div>
+                    <h3 class="ml-4 text-lg font-semibold text-red-800">Atenção</h3>
+                </div>
+                <p class="text-red-800 font-medium text-lg">
+                    As inscrições são realizadas <span class="font-bold">EXCLUSIVAMENTE DE FORMA PRESENCIAL</span>
+                </p>
+            </div>
+
+            <div class="p-6">
+                <h4 class="text-lg font-semibold text-gray-900 mb-4">
+                    <i class="fas fa-map-marker-alt text-etep-red mr-2"></i>
+                    Locais de Inscrição
+                </h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition duration-300">
+                        <div class="flex items-center mb-3">
+                            <img src="img/LogoETEP.png" alt="ETEP" class="w-8 h-8 object-contain">
+                            <h5 class="ml-3 font-semibold text-gray-900">ETEP - Escola Técnica de Paulínia</h5>
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <p><i class="fas fa-map-marker-alt text-etep-red mr-2"></i>Av. Constante Pavan, 1001 - Betel</p>
+                            <p class="ml-6">Paulínia - SP, CEP 13148-160</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Constante+Pavan%2C+1001%2C+Betel%2C+Paul%C3%ADnia+-+SP%2C+13148-160" 
+                               target="_blank" 
+                               class="inline-flex items-center mt-2 text-blue-600 hover:text-blue-800 transition duration-300">
+                                <i class="fas fa-directions mr-2"></i>
+                                Como chegar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition duration-300">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-etep-red rounded-full flex items-center justify-center">
+                                <i class="fas fa-school text-white"></i>
+                            </div>
+                            <h5 class="ml-3 font-semibold text-gray-900">CEMEP - Centro Municipal de Ensino</h5>
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <p><i class="fas fa-map-marker-alt text-etep-red mr-2"></i>Av. Brasil, 330 - Vila Bressani</p>
+                            <p class="ml-6">Paulínia - SP, CEP 13140-496</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Brasil%2C+330%2C+Vila+Bressani%2C+Paul%C3%ADnia+-+SP%2C+13140-496" 
+                               target="_blank" 
+                               class="inline-flex items-center mt-2 text-blue-600 hover:text-blue-800 transition duration-300">
+                                <i class="fas fa-directions mr-2"></i>
+                                Como chegar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 space-y-4">
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            Documentos Necessários
+                        </h4>
+                        <ul class="list-disc list-inside text-blue-700 space-y-1">
+                            <li>Documento oficial com foto (RG, CIN ou CNH)</li>
+                            <li>Comprovante de residência</li>
+                            <li>CPF do candidato</li>
+                            <li>CPF do responsável (para menores de 18 anos)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 rounded-lg p-4">
+                        <h4 class="font-semibold text-green-800 mb-2">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            Dicas Importantes
+                        </h4>
+                        <ul class="list-disc list-inside text-green-700 space-y-1">
+                            <li>Chegue com antecedência</li>
+                            <li>Traga todos os documentos originais</li>
+                            <li>Verifique o horário de atendimento</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Cursos Disponíveis</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="vestibulinho-card animate-fade-in">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Técnico em Química</h3>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Integrado ao Ensino Médio
+                    </span>
+                </div>
+                
+                <div class="space-y-3 mb-6 text-gray-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-school text-etep-red mr-3"></i>
+                        <span>ETEP - Escola Técnica de Paulínia</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-etep-red mr-3"></i>
+                        <span>Período Integral</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar text-etep-red mr-3"></i>
+                        <span>Prova: 15/01/2025 às 14:00</span>
+                    </div>
+                </div>
+                <div class="text-center text-gray-600">
+                    <p class="mb-2">Para realizar inscrições, procure um dos pontos de atendimento:</p>
+                    <ul class="text-sm">
+                        <li>Secretaria da ETEP</li>
+                        <li>Centro de Atendimento ao Cidadão</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html> 
