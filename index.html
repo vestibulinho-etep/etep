@@ -9,23 +9,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'etep-red': '#AE1F24',
-                        'etep-red-dark': '#8B1E22',
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS via CDNJS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -55,7 +40,7 @@
                     <a href="#cursos" class="text-gray-700 hover:text-etep-red transition-colors font-medium">Cursos</a>
                     <a href="#contato" class="text-gray-700 hover:text-etep-red transition-colors font-medium">Contato</a>
                     <a href="vestibulinho.html" class="btn-etep text-white px-6 py-2 rounded-full font-medium">
-                        Vestibulinho 2025
+                        Vestibulinho
                     </a>
                 </div>
                 
@@ -76,7 +61,7 @@
                 <a href="#cursos" class="block px-3 py-2 text-gray-700 hover:text-etep-red">Cursos</a>
                 <a href="#contato" class="block px-3 py-2 text-gray-700 hover:text-etep-red">Contato</a>
                 <a href="vestibulinho.html" class="block px-3 py-2 bg-etep-red text-white rounded-lg mx-3 text-center">
-                    Vestibulinho 2025
+                    Vestibulinho
                 </a>
             </div>
         </div>
@@ -92,7 +77,8 @@
             </h1>
             <p class="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
                 Escola <strong>pública municipal</strong> de Paulínia, formando profissionais qualificados há mais de <strong>30 anos</strong>
-                com excelência em educação técnica e compromisso com o futuro
+                com excelência em educação técnica e compromisso com o futuro.
+                Ensino Médio focado em vestibulares.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#cursos" class="btn-etep px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg">
@@ -101,7 +87,13 @@
                 </a>
                 <a href="vestibulinho.html" class="bg-white text-etep-red px-8 py-4 rounded-full text-lg font-semibold border-2 border-white hover:bg-transparent hover:text-white transition-all">
                     <i class="fas fa-edit mr-2"></i>
-                    Vestibulinho 2025
+                    Vestibulinho
+                </a>
+            </div>
+            <div class="mt-4">
+                <a href="https://instagram.com/etep_paulinia" target="_blank" class="inline-flex items-center bg-white text-etep-red px-8 py-4 rounded-full text-lg font-semibold border-2 border-white hover:bg-transparent hover:text-white transition-all">
+                    <img src="img/Instagram_Glyph_Gradient.svg" alt="Instagram Logo" class="w-6 h-6 mr-2">
+                    Siga-nos no Instagram
                 </a>
             </div>
         </div>
@@ -486,7 +478,7 @@
                         <li><a href="#cursos" class="hover:text-white transition-colors">Técnico em Química Integrado</a></li>
                         <li><a href="#cursos" class="hover:text-white transition-colors">Técnico em Química Subsequente</a></li>
                         <li><a href="#cursos" class="hover:text-white transition-colors">Técnico em Enfermagem</a></li>
-                        <li><a href="vestibulinho.html" class="hover:text-white transition-colors">Vestibulinho 2025</a></li>
+                        <li><a href="vestibulinho.html" class="hover:text-white transition-colors">Vestibulinho</a></li>
                     </ul>
                 </div>
                 
@@ -526,7 +518,42 @@
         </div>
     </footer>
 
+    <!-- Modal Vestibulinho -->
+    <div id="modal-vestibulinho" class="fixed inset-0 z-50 hidden modal-vestibulinho">
+        <!-- Overlay -->
+        <div id="modal-overlay" class="absolute inset-0 bg-black opacity-0 modal-overlay"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div id="modal-content" class="relative bg-white rounded-lg max-w-lg w-full p-6 shadow-xl opacity-0 transform translate-y-4 modal-content">
+                <!-- Close Button -->
+                <button id="close-modal" class="absolute top-4 right-4 text-gray-400 modal-close-button">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                
+                <!-- Content -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Vestibulinho em Breve!</h3>
+                    <p class="text-gray-600 mb-6">
+                        O período de inscrições para o próximo vestibulinho ainda não está aberto. 
+                        Fique atento às nossas redes sociais para não perder nenhuma informação!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://instagram.com/etep_paulinia" target="_blank" class="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg modal-social-button">
+                            <i class="fab fa-instagram mr-2"></i>
+                            Siga no Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
+    <script src="js/linkVestibulinho.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

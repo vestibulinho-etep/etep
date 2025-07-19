@@ -1,19 +1,40 @@
 /* Tailwind CSS será carregado via CDN no HTML */
 
-/* Cores personalizadas da ETEP */
+/* Cores personalizadas */
 :root {
-  --etep-red: #AE1F24;
-  --etep-gradient-start: #ffffff;
-  --etep-gradient-end: #000000;
+    --etep-red: #AE1F24;
+    --etep-red-dark: #8B1E22;
+}
+
+/* Classes de cor personalizadas */
+.bg-etep-red {
+    background-color: var(--etep-red);
+}
+
+.bg-etep-red-dark {
+    background-color: var(--etep-red-dark);
+}
+
+.text-etep-red {
+    color: var(--etep-red);
+}
+
+.hover\:text-etep-red:hover {
+    color: var(--etep-red);
+}
+
+.hover\:bg-etep-red:hover {
+    background-color: var(--etep-red);
+}
+
+/* Fonte personalizada */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 /* Classes personalizadas */
 .etep-red {
   color: var(--etep-red);
-}
-
-.bg-etep-red {
-  background-color: var(--etep-red);
 }
 
 .bg-etep-gradient {
@@ -376,4 +397,71 @@
         box-shadow: none;
         border: 1px solid #dee2e6;
     }
+} 
+
+/* Estilos para o Modal do Vestibulinho */
+.modal-vestibulinho {
+    transition: visibility 0s linear 300ms;
+}
+
+.modal-vestibulinho[class*="hidden"] {
+    visibility: hidden;
+    transition: visibility 0s linear 300ms;
+}
+
+.modal-overlay {
+    transition: all 300ms ease-in-out;
+}
+
+.modal-content {
+    transition: all 300ms ease-in-out;
+}
+
+/* Animações do Modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+}
+
+.modal-animate-in {
+    animation: modalFadeIn 300ms ease-out forwards;
+}
+
+.modal-animate-out {
+    animation: modalFadeOut 300ms ease-in forwards;
+}
+
+/* Botões do Modal */
+.modal-social-button {
+    transition: all 200ms ease-in-out;
+}
+
+.modal-social-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close-button {
+    transition: all 200ms ease-in-out;
+}
+
+.modal-close-button:hover {
+    transform: scale(1.1);
 } 

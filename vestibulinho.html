@@ -25,22 +25,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <img src="img/LogoETEP_horizontal.png" alt="ETEP Logo" class="h-10 w-auto mr-3">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ajuste de espaço para o conteúdo não ficar sob a navbar -->
+    <div class="h-16"></div>
+
 <div class="vestibulinho-header">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Vestibulinho ETEP 2025</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Vestibulinho ETEP 2026</h1>
             <p class="text-xl md:text-2xl mb-8 text-gray-200 animate-fade-in">
-                Sua porta de entrada para uma formação técnica de excelência
+                Sua porta de entrada para uma formação de Ensino Médio e Técnico de excelência
             </p>
             <div class="flex items-center justify-center space-x-4">
                 <a href="#informacoes-importantes" class="btn-vestibulinho bg-white !text-[#AE1F24] hover:bg-white hover:shadow-md">
                     <i class="far fa-calendar-alt mr-2"></i>
                     Inscrições até 31/12/2024
                 </a>
+                <!--
                 <a href="consulta.html" class="btn-vestibulinho bg-white !text-[#AE1F24] hover:bg-white hover:shadow-md">
                     <i class="fas fa-search mr-2"></i>
                     Consultar Inscrição
                 </a>
+                -->
             </div>
         </div>
     </div>
@@ -87,8 +105,8 @@
 
                     <div class="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition duration-300">
                         <div class="flex items-center mb-3">
-                            <div class="w-8 h-8 bg-etep-red rounded-full flex items-center justify-center">
-                                <i class="fas fa-school text-white"></i>
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <img src="img/LogoCEMEP.png" alt="CEMEP" class="w-8 h-8 object-contain">
                             </div>
                             <h5 class="ml-3 font-semibold text-gray-900">CEMEP - Centro Municipal de Ensino</h5>
                         </div>
@@ -138,10 +156,11 @@
     <section class="mb-16">
         <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Cursos Disponíveis</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Curso 1: Técnico em Química Integrado -->
             <div class="vestibulinho-card animate-fade-in">
                 <div class="text-center mb-6">
                     <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        <i class="fas fa-flask text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Técnico em Química</h3>
                     <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
@@ -160,7 +179,112 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span>Prova: 15/01/2025 às 14:00</span>
+                        <span>Prova: 15/01/2026 às 14:00</span>
+                    </div>
+                </div>
+                <div class="text-center text-gray-600">
+                    <p class="mb-2">Para realizar inscrições, procure um dos pontos de atendimento:</p>
+                    <ul class="text-sm">
+                        <li>Secretaria da ETEP</li>
+                        <li>Centro de Atendimento ao Cidadão</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Curso 2: Técnico em Química Subsequente -->
+            <div class="vestibulinho-card animate-fade-in">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-vial text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Técnico em Química</h3>
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Subsequente
+                    </span>
+                </div>
+                
+                <div class="space-y-3 mb-6 text-gray-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-school text-etep-red mr-3"></i>
+                        <span>ETEP - Escola Técnica de Paulínia</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-moon text-etep-red mr-3"></i>
+                        <span>Período Noturno</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar text-etep-red mr-3"></i>
+                        <span>Prova: 15/01/2026 às 19:00</span>
+                    </div>
+                </div>
+                <div class="text-center text-gray-600">
+                    <p class="mb-2">Para realizar inscrições, procure um dos pontos de atendimento:</p>
+                    <ul class="text-sm">
+                        <li>Secretaria da ETEP</li>
+                        <li>Centro de Atendimento ao Cidadão</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Curso 3: Técnico em Enfermagem -->
+            <div class="vestibulinho-card animate-fade-in">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-nurse text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Técnico em Enfermagem</h3>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Subsequente
+                    </span>
+                </div>
+                
+                <div class="space-y-3 mb-6 text-gray-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-school text-etep-red mr-3"></i>
+                        <span>ETEP - Escola Técnica de Paulínia</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-sun text-etep-red mr-3"></i>
+                        <span>Período Matutino</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar text-etep-red mr-3"></i>
+                        <span>Prova: 15/01/2026 às 08:00</span>
+                    </div>
+                </div>
+                <div class="text-center text-gray-600">
+                    <p class="mb-2">Para realizar inscrições, procure um dos pontos de atendimento:</p>
+                    <ul class="text-sm">
+                        <li>Secretaria da ETEP</li>
+                        <li>Centro de Atendimento ao Cidadão</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Curso 4: Técnico em Informática Integrado -->
+            <div class="vestibulinho-card animate-fade-in">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Técnico em Informática</h3>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Integrado ao Ensino Médio
+                    </span>
+                </div>
+                
+                <div class="space-y-3 mb-6 text-gray-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-school text-etep-red mr-3"></i>
+                        <span>ETEP - Escola Técnica de Paulínia</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-etep-red mr-3"></i>
+                        <span>Período Integral</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar text-etep-red mr-3"></i>
+                        <span>Prova: 15/01/2026 às 14:00</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
