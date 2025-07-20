@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial do Vestibulinho</title>
+    <title>Vestibulinho</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'etep-red': '#AE1F24',
-                        'etep-red-dark': '#8B1E22',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
     
+    <!-- Tailwind CSS via CDNJS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -44,14 +40,14 @@
 <div class="vestibulinho-header">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Vestibulinho ETEP 2026</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Vestibulinho</h1>
             <p class="text-xl md:text-2xl mb-8 text-gray-200 animate-fade-in">
                 Sua porta de entrada para uma formação de Ensino Médio e Técnico de excelência
             </p>
             <div class="flex items-center justify-center space-x-4">
-                <a href="#informacoes-importantes" class="btn-vestibulinho bg-white !text-[#AE1F24] hover:bg-white hover:shadow-md">
+                <a href="#informacoes-importantes" class="btn-etep text-white px-6 py-2 rounded-full font-medium">
                     <i class="far fa-calendar-alt mr-2"></i>
-                    Inscrições até 31/12/2024
+                    Inscrições 
                 </a>
                 <!--
                 <a href="consulta.html" class="btn-vestibulinho bg-white !text-[#AE1F24] hover:bg-white hover:shadow-md">
@@ -157,12 +153,12 @@
         <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Cursos Disponíveis</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Curso 1: Técnico em Química Integrado -->
-            <div class="vestibulinho-card animate-fade-in">
+            <div id="card-curso-1" class="vestibulinho-card animate-fade-in">
                 <div class="text-center mb-6">
                     <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-flask text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Técnico em Química</h3>
+                    <h3 id="titulo-curso-1" class="text-xl font-bold text-gray-900 mb-2">Técnico em Química</h3>
                     <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
                         Integrado ao Ensino Médio
                     </span>
@@ -179,25 +175,25 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span>Prova: 15/01/2026 às 14:00</span>
+                        <span id="data-prova-curso-1">Prova</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
                     <p class="mb-2">Para realizar inscrições, procure um dos pontos de atendimento:</p>
                     <ul class="text-sm">
                         <li>Secretaria da ETEP</li>
-                        <li>Centro de Atendimento ao Cidadão</li>
+                        <li>Secretaria do CEMEP</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Curso 2: Técnico em Química Subsequente -->
-            <div class="vestibulinho-card animate-fade-in">
+            <div id="card-curso-2" class="vestibulinho-card animate-fade-in">
                 <div class="text-center mb-6">
                     <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-vial text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Técnico em Química</h3>
+                    <h3 id="titulo-curso-2" class="text-xl font-bold text-gray-900 mb-2">Técnico em Química</h3>
                     <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
                         Subsequente
                     </span>
@@ -214,25 +210,25 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span>Prova: 15/01/2026 às 19:00</span>
+                        <span id="data-prova-curso-2">Prova</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
                     <p class="mb-2">Para realizar inscrições, procure um dos pontos de atendimento:</p>
                     <ul class="text-sm">
                         <li>Secretaria da ETEP</li>
-                        <li>Centro de Atendimento ao Cidadão</li>
+                        <li>Secretaria do CEMEP</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Curso 3: Técnico em Enfermagem -->
-            <div class="vestibulinho-card animate-fade-in">
+            <div id="card-curso-3" class="vestibulinho-card animate-fade-in">
                 <div class="text-center mb-6">
                     <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-user-nurse text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Técnico em Enfermagem</h3>
+                    <h3 id="titulo-curso-3" class="text-xl font-bold text-gray-900 mb-2">Técnico em Enfermagem</h3>
                     <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
                         Subsequente
                     </span>
@@ -249,19 +245,20 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span>Prova: 15/01/2026 às 08:00</span>
+                        <span id="data-prova-curso-3">Prova: 15/01/2026 às 08:00</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
                     <p class="mb-2">Para realizar inscrições, procure um dos pontos de atendimento:</p>
                     <ul class="text-sm">
                         <li>Secretaria da ETEP</li>
-                        <li>Centro de Atendimento ao Cidadão</li>
+                        <li>Secretaria do CEMEP</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Curso 4: Técnico em Informática Integrado -->
+            <!--
             <div class="vestibulinho-card animate-fade-in">
                 <div class="text-center mb-6">
                     <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
@@ -284,19 +281,56 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span>Prova: 15/01/2026 às 14:00</span>
+                        <span>Prova</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
                     <p class="mb-2">Para realizar inscrições, procure um dos pontos de atendimento:</p>
                     <ul class="text-sm">
                         <li>Secretaria da ETEP</li>
-                        <li>Centro de Atendimento ao Cidadão</li>
+                        <li>Secretaria do CEMEP</li>
                     </ul>
                 </div>
             </div>
+            -->
         </div>
     </section>
 </div>
+
+<!-- Modal Vestibulinho -->
+<div id="modal-vestibulinho" class="fixed inset-0 z-50 hidden modal-vestibulinho">
+    <!-- Overlay -->
+    <div id="modal-overlay" class="absolute inset-0 bg-black opacity-0 modal-overlay"></div>
+    
+    <!-- Modal Content -->
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+        <div id="modal-content" class="relative bg-white rounded-lg max-w-lg w-full p-6 shadow-xl opacity-0 transform translate-y-4 modal-content">
+            <!-- Close Button -->
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 modal-close-button">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <!-- Content -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-clock text-yellow-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Vestibulinho em Breve!</h3>
+                <p class="text-gray-600 mb-6">
+                    O período de inscrições para o próximo vestibulinho ainda não está aberto. 
+                    Fique atento às nossas redes sociais para não perder nenhuma informação!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://instagram.com/etep_paulinia" target="_blank" class="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg modal-social-button">
+                        <i class="fab fa-instagram mr-2"></i>
+                        Siga no Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/linkVestibulinho.js"></script>
 </body>
 </html> 

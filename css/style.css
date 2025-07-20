@@ -1,30 +1,77 @@
 /* Tailwind CSS será carregado via CDN no HTML */
 
-/* Cores personalizadas */
+/* Variáveis de cor */
 :root {
     --etep-red: #AE1F24;
     --etep-red-dark: #8B1E22;
 }
 
 /* Classes de cor personalizadas */
-.bg-etep-red {
+.bg-etep-red { background-color: var(--etep-red); }
+.bg-etep-red-dark { background-color: var(--etep-red-dark); }
+.text-etep-red { color: var(--etep-red); }
+
+/* Botão ETEP */
+.btn-etep {
     background-color: var(--etep-red);
+    transition: all 0.3s ease;
 }
 
-.bg-etep-red-dark {
+.btn-etep:hover {
     background-color: var(--etep-red-dark);
 }
 
-.text-etep-red {
-    color: var(--etep-red);
+/* Classes do Modal */
+.modal-vestibulinho {
+    transition: opacity 0.3s ease-out;
 }
 
-.hover\:text-etep-red:hover {
-    color: var(--etep-red);
+.modal-overlay {
+    transition: opacity 0.3s ease-out;
 }
 
-.hover\:bg-etep-red:hover {
-    background-color: var(--etep-red);
+.modal-content {
+    transition: all 0.3s ease-out;
+}
+
+.modal-social-button:hover {
+    opacity: 0.9;
+}
+
+/* Animações */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo do Header do Vestibulinho */
+.vestibulinho-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/LogoETEP.png');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 0;
+    color: white;
+}
+
+/* Cards do Vestibulinho */
+.vestibulinho-card {
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.vestibulinho-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Fonte personalizada */
