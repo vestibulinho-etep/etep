@@ -130,8 +130,6 @@ async function carregarConfiguracoes() {
         // Atualiza as datas convertidas
         inicioInscricoesDate = converterDataBrParaDate(inicioInscricoes);
         fimInscricoesDate = converterDataBrParaDate(fimInscricoes);
-        
-        console.log(`Configurações carregadas do arquivo ${maiorAno}.json`);
         return true;
         
     } catch (error) {
