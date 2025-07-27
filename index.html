@@ -501,11 +501,17 @@
                             (19) 3884-7708
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-envelope mr-2"></i>
-                            contato@etep.com.br
+                            <a href="mailto:etep@etep.com.br" class="flex items-center">
+                                <i class="fas fa-envelope mr-2"></i>
+                            </a>
+                            etep@etep.com.br
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mr-2 mt-1"></i>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Constante+Pavan%2C+1001%2C+Betel%2C+Paul%C3%ADnia+-+SP%2C+13148-160" 
+                               target="_blank" 
+                               class="inline-flex">
+                               <i class="fas fa-map-marker-alt mr-2 mt-1"></i>
+                            </a>
                             <span>Av. Constante Pavan, 1001<br>Betel - Paulínia/SP</span>
                         </li>
                     </ul>
@@ -513,7 +519,10 @@
             </div>
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 ETEP - Escola Técnica de Paulínia. Todos os direitos reservados.</p>
+                <p>&copy; <span id="current-year"></span> ETEP - Escola Técnica de Paulínia. Todos os direitos reservados.</p>
+                <script>
+                    document.getElementById('current-year').textContent = new Date().getFullYear();
+                </script>
             </div>
         </div>
     </footer>
