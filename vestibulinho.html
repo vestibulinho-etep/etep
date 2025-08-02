@@ -19,6 +19,8 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     
@@ -50,14 +52,14 @@
 <div class="vestibulinho-header">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Vestibulinho</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in" name="vestibulinho">Vestibulinho</h1>
             <p class="text-xl md:text-2xl mb-8 text-gray-200 animate-fade-in">
                 Sua porta de entrada para uma formação de Ensino Médio e Técnico de excelência
             </p>
             <div class="flex items-center justify-center space-x-4">
                 <a href="#informacoes-importantes" class="btn-etep text-white px-6 py-2 rounded-full font-medium">
                     <i class="far fa-calendar-alt mr-2"></i>
-                    Inscrições 
+                    <span id="inscricoes">Inscrições</span>
                 </a>
                 <!--
                 <a href="consulta.html" class="btn-vestibulinho bg-white !text-[#AE1F24] hover:bg-white hover:shadow-md">
@@ -76,7 +78,7 @@
         <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Documentos</h2>
         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
             <div class="p-6">
-                <div id="lista-documentos" class="space-y-4">
+                <div id="lista-documentos" class="space-y-4 transition-all duration-300">
                     <!-- Os documentos serão carregados dinamicamente via JavaScript -->
                     <div class="text-center text-gray-500 py-8">
                         <i class="fas fa-spinner fa-spin text-2xl mb-4"></i>
@@ -201,7 +203,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span id="data-prova-curso-1">Prova</span>
+                        <span id="data-prova-curso-1" id="data-prova-curso-1">Prova</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
@@ -236,7 +238,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span id="data-prova-curso-2">Prova</span>
+                        <span id="data-prova-curso-2" id="data-prova-curso-2">Prova</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
@@ -271,7 +273,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span id="data-prova-curso-3">Prova: 15/01/2026 às 08:00</span>
+                        <span id="data-prova-curso-3" id="data-prova-curso-3">Prova</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
@@ -350,7 +352,7 @@
                         <li><a href="index.html#cursos" class="hover:text-white transition-colors">Técnico em Química Integrado</a></li>
                         <li><a href="index.html#cursos" class="hover:text-white transition-colors">Técnico em Química Subsequente</a></li>
                         <li><a href="index.html#cursos" class="hover:text-white transition-colors">Técnico em Enfermagem</a></li>
-                        <li><a href="vestibulinho.html" class="hover:text-white transition-colors">Vestibulinho</a></li>
+                        <li><a href="vestibulinho.html" name="vestibulinho" class="hover:text-white transition-colors">Vestibulinho</a></li>
                     </ul>
                 </div>
                 
@@ -435,6 +437,7 @@
 
 </div> <!-- End Main Content -->
 
-<script src="js/vestibulinho.js"></script>
+<script src="js/atualiza.js"></script>
+<script type="module" src="js/vestibulinho.js"></script>
 </body>
 </html> 

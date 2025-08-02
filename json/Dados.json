@@ -1,0 +1,37 @@
+{
+  "vestibulinhoAtivo": true,
+  "visibilidade": {
+    "mostrarCurso1": true,
+    "mostrarCurso2": true,
+    "mostrarCurso3": true
+  },
+  "datasProvas": {
+    "curso1": {
+      "data": "05/08/2025",
+      "horario": "08:00"
+    },
+    "curso2": {
+      "data": "05/08/2025",
+      "horario": "08:00"
+    },
+    "curso3": {
+      "data": "05/08/2025",
+      "horario": "08:00"
+    }
+  },
+  "inscricoes": {
+    "inicio": "28/07/2025",
+    "fim": "30/07/2025"
+  },
+  "ano": 2026,
+  "documentos": [
+    {
+      "titulo": "Edital",
+      "arquivo_url": "http://127.0.0.1:8000/media/vestibulinho/2026/UNICAMP-2021-2025_gab.pdf",
+      "arquivo_nome": "vestibulinho/2026/UNICAMP-2021-2025_gab.pdf",
+      "is_etep": true,
+      "is_cemep": true,
+      "data_publicacao": "29/07/2025"
+    }
+  ]
+}
