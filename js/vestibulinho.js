@@ -84,6 +84,7 @@ async function carregarConfiguracoes() {
         const dados = await buscarDadosAPI();
         
         if (!dados) {
+            vestibulinhoAtivo = false;
             console.error('Nenhum dado encontrado na API');
             return false;
         }
