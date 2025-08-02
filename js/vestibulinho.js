@@ -12,6 +12,9 @@ let mostrarCurso1 = true;
 let mostrarCurso2 = true;
 let mostrarCurso3 = true;
 
+// Documentos
+let documentos = [];
+
 // Datas e Horários - Curso 1
 let dataProvaCurso1 = "";
 let horarioProvaCurso1 = "";
@@ -28,30 +31,20 @@ let horarioProvaCurso3 = "";
 let inicioInscricoes = "";
 let fimInscricoes = "";
 
-// Função para encontrar o arquivo JSON com o maior ano
-async function encontrarMaiorAno() {
+// Função para buscar dados da API
+async function buscarDadosAPI() {
     try {
-        // Calcula dinamicamente os anos para testar baseado no ano atual
-        const anoAtual = new Date().getFullYear();
-        const anosParaTestar = [anoAtual - 1, anoAtual, anoAtual + 1];
-        let maiorAno = 0;
+        // Primeiro tenta a API direta
+        const response = await fetch('http://127.0.0.1:8000/vestibulinho/documentos/api/etep/');
         
-        for (const ano of anosParaTestar) {
-            try {
-                const response = await fetch(`json/${ano}.json`);
-                if (response.ok) {
-                    maiorAno = ano;
-                }
-            } catch (error) {
-                // Arquivo não existe, continua para o próximo
-                continue;
-            }
+        if (!response.ok) {
+            throw new Error(`Erro ao buscar dados da API: ${response.status}`);
         }
         
-        return maiorAno > 0 ? maiorAno : null;
+        const dados = await response.json();
+        return dados;
     } catch (error) {
-        console.error('Erro ao encontrar arquivo JSON:', error);
-        return null;
+        console.error('Erro ao buscar dados da API:', error);  
     }
 }
 
@@ -88,25 +81,19 @@ function esconderLoading() {
 // Função para carregar as configurações do vestibulinho
 async function carregarConfiguracoes() {
     try {
-        const maiorAno = await encontrarMaiorAno();
+        const dados = await buscarDadosAPI();
         
-        if (!maiorAno) {
-            console.error('Nenhum arquivo JSON encontrado');
+        if (!dados) {
+            console.error('Nenhum dado encontrado na API');
             return false;
         }
-        
-        const response = await fetch(`json/${maiorAno}.json`);
-        
-        if (!response.ok) {
-            throw new Error(`Erro ao carregar ${maiorAno}.json: ${response.status}`);
-        }
-        
-        const dados = await response.json();
         
         // Extrai os valores para as variáveis
         vestibulinhoAtivo = dados.vestibulinhoAtivo;
         ano = dados.ano;
         
+        // Como a API não retorna os nomes dos cursos, vamos usar valores padrão
+        // ou você pode adicionar os nomes dos cursos na API
         curso1 = dados.cursos.curso1;
         curso2 = dados.cursos.curso2;
         curso3 = dados.cursos.curso3;
@@ -126,6 +113,9 @@ async function carregarConfiguracoes() {
         
         inicioInscricoes = dados.inscricoes.inicio;
         fimInscricoes = dados.inscricoes.fim;
+        
+        // Carrega os documentos
+        documentos = dados.documentos || [];
         
         // Atualiza as datas convertidas
         inicioInscricoesDate = converterDataBrParaDate(inicioInscricoes);
@@ -285,6 +275,76 @@ function atualizarTodasDatas() {
     }
 }
 
+
+
+// Função para ordenar documentos por data de publicação (decrescente)
+function ordenarDocumentosPorData(documentos) {
+    return documentos.sort((a, b) => {
+        const dataA = converterDataBrParaDate(a.data_publicacao);
+        const dataB = converterDataBrParaDate(b.data_publicacao);
+        return dataB - dataA; // Ordem decrescente
+    });
+}
+
+// Função para obter a extensão do arquivo
+function obterExtensaoArquivo(nomeArquivo) {
+    const extensao = nomeArquivo.split('.').pop().toLowerCase();
+    return extensao;
+}
+
+// Função para obter o ícone baseado na extensão do arquivo
+function obterIconeArquivo(extensao) {
+    const icones = {
+        'pdf': 'fas fa-file-pdf',
+        'doc': 'fas fa-file-word',
+        'docx': 'fas fa-file-word',
+        'xls': 'fas fa-file-excel',
+        'xlsx': 'fas fa-file-excel',
+        'ppt': 'fas fa-file-powerpoint',
+        'pptx': 'fas fa-file-powerpoint',
+        'txt': 'fas fa-file-alt',
+        'zip': 'fas fa-file-archive',
+        'rar': 'fas fa-file-archive'
+    };
+    return icones[extensao] || 'fas fa-file';
+}
+
+// Função para exibir os documentos
+function exibirDocumentos() {
+    const container = document.getElementById('lista-documentos');
+    if (!container) return;
+
+    if (documentos.length === 0) {
+        container.innerHTML = `
+            <div class="text-center text-gray-500 py-8">
+                <i class="fas fa-file-alt text-2xl mb-4"></i>
+                <p>Nenhum documento disponível no momento.</p>
+            </div>
+        `;
+        return;
+    }
+
+    // Ordena os documentos por data de publicação (decrescente)
+    const documentosOrdenados = ordenarDocumentosPorData([...documentos]);
+
+    const documentosHTML = documentosOrdenados.map(documento => {
+        return `
+            <div class="bg-gray-50 rounded-lg p-4 transition duration-300">
+                <div class="flex items-center space-x-3">
+                    <span class="text-sm text-gray-600">${documento.data_publicacao}</span>
+                    <a href="${documento.arquivo_url}" 
+                       target="_blank" 
+                       class="document-link font-medium">
+                        ${documento.titulo} <i class="fas fa-download ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    container.innerHTML = documentosHTML;
+}
+
 // Função para atualizar o ano do vestibulinho nos textos
 function atualizarAnoVestibulinho() {
     if (!vestibulinhoAtivo) return;
@@ -332,6 +392,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             handleVestibulinhoLinks();
             atualizarTodasDatas();
             atualizarAnoVestibulinho();
+            exibirDocumentos();
             
             // Aguarda um tempo mínimo para que o usuário veja o loading
             await new Promise(resolve => setTimeout(resolve, 800));
