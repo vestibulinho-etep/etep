@@ -35,7 +35,7 @@ let fimInscricoes = "";
 async function buscarDadosAPI() {
     try {
         // Primeiro tenta a API direta
-        const response = await fetch('http://127.0.0.1:8000/vestibulinho/documentos/api/etep/');
+        const response = await fetch('https://etep.com.br/vestibulinho/documentos/api/etep/');
         
         if (!response.ok) {
             throw new Error(`Erro ao buscar dados da API: ${response.status}`);
