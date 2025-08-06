@@ -89,6 +89,7 @@ function atualizaTodosOsDados(dados) {
 
     // Atualiza as inscrições
     if (dados.inscricoes) {
-        atualizaInscricoes(dados.inscricoes.inicio, dados.inscricoes.fim);
+        // atualizaInscricoes(dados.inscricoes.inicio, dados.inscricoes.fim);
+        atualizaInscricoes('01/09/2025', dados.inscricoes.fim);
     }
 }

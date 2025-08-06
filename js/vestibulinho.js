@@ -1,6 +1,6 @@
 async function getDadosVestibulinho() {
     try {
-        const response = await fetch('https://cpmac.hospedagemelastica.com.br/vestibulinho/documentos/api/etep/');
+        const response = await fetch('https://wcpmac.hospedagemelastica.com.br/vestibulinho/documentos/api/etep/');
         if (!response.ok) {
             throw new Error(`Erro HTTP: ${response.status}`);
         }
