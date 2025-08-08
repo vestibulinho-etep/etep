@@ -48,6 +48,10 @@
                     <a href="#sobre" class="text-gray-700 hover:text-etep-red transition-colors font-medium">Sobre</a>
                     <a href="#cursos" class="text-gray-700 hover:text-etep-red transition-colors font-medium">Cursos</a>
                     <a href="#contato" class="text-gray-700 hover:text-etep-red transition-colors font-medium">Contato</a>
+                    <a href="#contribua" class="btn-doar text-white px-4 py-2 rounded-full font-medium">
+                        <i class="fas fa-heart mr-2"></i>
+                        Doar
+                    </a>
                     <a href="vestibulinho.html" name="vestibulinho" class="btn-etep text-white px-6 py-2 rounded-full font-medium">
                         Vestibulinho
                     </a>
@@ -69,6 +73,10 @@
                 <a href="#sobre" class="block px-3 py-2 text-gray-700 hover:text-etep-red">Sobre</a>
                 <a href="#cursos" class="block px-3 py-2 text-gray-700 hover:text-etep-red">Cursos</a>
                 <a href="#contato" class="block px-3 py-2 text-gray-700 hover:text-etep-red">Contato</a>
+                <a href="#contribua" class="btn-doar block px-3 py-2 text-white rounded-lg mx-3 text-center">
+                    <i class="fas fa-heart mr-2"></i>
+                    Doar
+                </a>
                 <a href="vestibulinho.html" name="vestibulinho" class="block px-3 py-2 bg-etep-red text-white rounded-lg mx-3 text-center">
                     Vestibulinho
                 </a>
@@ -451,10 +459,105 @@
         </div>
     </section>
 
+    <!-- APM Section -->
+    <section id="apm" class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">APM - Associação de Pais e Mestres</h2>
+                <div class="w-20 h-1 bg-etep-red mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A APM da ETEP trabalha para promover melhorias na infraestrutura e recursos educacionais da nossa escola. 
+                    Sua contribuição faz a diferença no futuro dos nossos estudantes!
+                </p>
+            </div>
+
+            <div id="contribua" class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Contribua com a ETEP</h3>
+                    <p class="text-gray-600 mb-6">
+                        Suas doações ajudam a manter e melhorar nossos laboratórios, equipamentos e espaços de ensino. 
+                        Juntos, podemos oferecer uma educação técnica ainda mais qualificada para nossa comunidade.
+                    </p>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <!-- Imagem PIX -->
+                    <div class="text-center">
+                        <div class="bg-gray-100 p-4 rounded-lg inline-block mb-4">
+                            <img src="img/pix_etep.png" alt="QR Code PIX ETEP" class="w-53 h-52 object-contain">
+                        </div>
+                        <div class="flex items-center justify-center mb-2">
+                            <img src="img/LogoPIX.svg" alt="Logo PIX" class="h-8 w-auto">
+                        </div>
+                        <p class="text-sm text-gray-600">Escaneie o QR Code para doar via PIX</p>
+                    </div>
+
+                    <!-- Informações PIX -->
+                    <div class="text-center md:text-left">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">Dados PIX</h4>
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 mb-2">Chave PIX (E-mail):</p>
+                                <div class="flex items-center justify-between bg-white p-3 rounded border">
+                                    <span id="pix-key" class="font-mono text-gray-900">etep@etep.com.br</span>
+                                    <button id="copy-pix-btn" onclick="copyPixKey()" class="ml-4 bg-etep-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
+                                        <i class="fas fa-copy mr-2"></i>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div id="copy-feedback" class="hidden mt-2 text-green-600 text-sm">
+                                    <i class="fas fa-check mr-1"></i>
+                                    Chave PIX copiada com sucesso!
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 mb-2">Beneficiário:</p>
+                                <p class="font-semibold text-gray-900">Associação de Pais e Mestres da ETEP</p>
+                            </div>
+
+                            <div class="text-center md:text-left">
+                                <p class="text-sm text-gray-600 mb-4">
+                                    Qualquer valor é bem-vindo e fará a diferença!
+                                </p>
+                                <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">R$ 10,00</span>
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">R$ 25,00</span>
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">R$ 50,00</span>
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">R$ 100,00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-blue-900 mb-3">Como sua doação ajuda:</h4>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm text-blue-800">
+                            <div class="flex items-center">
+                                <i class="fas fa-flask text-etep-red mr-2"></i>
+                                <span>Equipamentos de laboratório</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-vial text-etep-red mr-2"></i>
+                                <span>Materiais para práticas</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-tools text-etep-red mr-2"></i>
+                                <span>Manutenção e melhorias</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center mb-4">
                         <img src="img/LogoETEP_horizontal.png" alt="ETEP Logo" class="h-8 w-auto mr-3">
@@ -479,17 +582,6 @@
                         <li><a href="#cursos" class="hover:text-white transition-colors">Técnico em Química Subsequente</a></li>
                         <li><a href="#cursos" class="hover:text-white transition-colors">Técnico em Enfermagem</a></li>
                         <li><a href="vestibulinho.html" name="vestibulinho" class="hover:text-white transition-colors">Vestibulinho</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Links Úteis</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#sobre" class="hover:text-white transition-colors">Sobre a ETEP</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Portal do Aluno</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Calendário Acadêmico</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Biblioteca</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">APM</a></li>
                     </ul>
                 </div>
                 

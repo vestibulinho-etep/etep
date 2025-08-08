@@ -207,6 +207,19 @@ body {
   transform: translateY(-2px);
 }
 
+/* Botão de doação */
+.btn-doar {
+  background: linear-gradient(45deg, #7c2d12, #dc2626);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(124, 45, 18, 0.1);
+}
+
+.btn-doar:hover {
+  background: linear-gradient(45deg, #991b1b, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(124, 45, 18, 0.2);
+}
+
 /* Estilo para navegação */
 .nav-blur {
   backdrop-filter: blur(10px);

@@ -176,4 +176,52 @@ function toggleCourseDetails(courseId) {
         details.classList.add('hidden');
         button.textContent = 'Ver Mais';
     }
+}
+
+// Função para copiar a chave PIX
+async function copyPixKey() {
+    const pixKey = document.getElementById('pix-key').textContent;
+    const copyBtn = document.getElementById('copy-pix-btn');
+    const feedback = document.getElementById('copy-feedback');
+    
+    try {
+        await navigator.clipboard.writeText(pixKey);
+        
+        // Mostrar feedback de sucesso
+        feedback.classList.remove('hidden');
+        copyBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Copiado!';
+        copyBtn.classList.add('bg-green-600');
+        copyBtn.classList.remove('bg-etep-red');
+        
+        // Resetar o botão após 3 segundos
+        setTimeout(() => {
+            feedback.classList.add('hidden');
+            copyBtn.innerHTML = '<i class="fas fa-copy mr-2"></i>Copiar';
+            copyBtn.classList.remove('bg-green-600');
+            copyBtn.classList.add('bg-etep-red');
+        }, 3000);
+        
+    } catch (err) {
+        // Fallback para navegadores mais antigos
+        const textArea = document.createElement('textarea');
+        textArea.value = pixKey;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        // Mostrar feedback de sucesso
+        feedback.classList.remove('hidden');
+        copyBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Copiado!';
+        copyBtn.classList.add('bg-green-600');
+        copyBtn.classList.remove('bg-etep-red');
+        
+        // Resetar o botão após 3 segundos
+        setTimeout(() => {
+            feedback.classList.add('hidden');
+            copyBtn.innerHTML = '<i class="fas fa-copy mr-2"></i>Copiar';
+            copyBtn.classList.remove('bg-green-600');
+            copyBtn.classList.add('bg-etep-red');
+        }, 3000);
+    }
 } 
