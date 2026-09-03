@@ -1,31 +1,42 @@
 async function getDadosVestibulinho() {
+    let dadosApi = {
+        vestibulinhoAtivo: false,
+        documentos: []
+    };
+
     try {
         const response = await fetch('https://vestibulinho.etep.com.br/api/arquivos/');
-        if (!response.ok) {
-            throw new Error(`Erro HTTP: ${response.status}`);
+        if (response.ok) {
+            dadosApi = await response.json();
+        } else {
+            console.error(`Erro HTTP ao buscar API: ${response.status}`);
         }
-        const dados = await response.json();
-        return dados;
     } catch (erro) {
         console.error('Erro ao buscar dados do vestibulinho:', erro);
-        return {
-            vestibulinhoAtivo: false,
-            documentos: []
-        };
     }
+
+    try {
+        const prefResponse = await fetch('json/preferencia.json');
+        if (prefResponse.ok) {
+            const preferencia = await prefResponse.json();
+            return {
+                ...preferencia,
+                documentos: dadosApi.documentos || []
+            };
+        }
+    } catch (erro) {
+        // Se json/preferencia.json não existir ou falhar, segue com os dados da API
+    }
+
+    return dadosApi;
 }
 
 (async function() {
     const dadosVestibulinho = await getDadosVestibulinho();
     
-    // Verifica se há pelo menos um documento/arquivo publicado para a ETEP
-    const temDocumentos = Array.isArray(dadosVestibulinho.documentos) && 
-                          dadosVestibulinho.documentos.some(doc => doc.is_etep);
+    // Se vestibulinhoAtivo for true, exibe o vestibulinho ativo e libera a navegação
+    window.vestibulinhoAtivo = Boolean(dadosVestibulinho.vestibulinhoAtivo);
 
-    // Configurações do Vestibulinho: ativo somente se a flag for true E houver arquivos publicados
-    window.vestibulinhoAtivo = Boolean(dadosVestibulinho.vestibulinhoAtivo && temDocumentos);
-
-    // Se estiver ativo com arquivos, exibe o ano; caso contrário, fica como 'Vestibulinho em Breve!'
     if (window.vestibulinhoAtivo) {
         atualizaVestibulinho(dadosVestibulinho.ano, false);
     } else {

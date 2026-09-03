@@ -21,8 +21,7 @@ async function getDadosVestibulinho() {
             const preferencia = await prefResponse.json();
             return {
                 ...preferencia,
-                documentos: dadosApi.documentos || [],
-                _usouPreferencia: true
+                documentos: dadosApi.documentos || []
             };
         }
     } catch (erro) {
@@ -35,24 +34,14 @@ async function getDadosVestibulinho() {
 (async function() {
     const dadosVestibulinho = await getDadosVestibulinho();
     
-    // Verifica se há pelo menos um documento/arquivo publicado para a ETEP
-    const temDocumentos = Array.isArray(dadosVestibulinho.documentos) && 
-                          dadosVestibulinho.documentos.some(doc => doc.is_etep);
-
-    // Configurações do Vestibulinho:
-    // Se utilizou preferencia.json, respeita o status definido nele;
-    // Caso contrário, ativo somente se a flag da API for true E houver arquivos publicados
-    if (dadosVestibulinho._usouPreferencia) {
-        window.vestibulinhoAtivo = Boolean(dadosVestibulinho.vestibulinhoAtivo);
-    } else {
-        window.vestibulinhoAtivo = Boolean(dadosVestibulinho.vestibulinhoAtivo && temDocumentos);
-    }
+    // Se vestibulinhoAtivo for true, ativa e exibe as informações do vestibulinho (não mais "em breve")
+    window.vestibulinhoAtivo = Boolean(dadosVestibulinho.vestibulinhoAtivo);
 
     // Atualiza os dados na página se o vestibulinho estiver ativo
     if (window.vestibulinhoAtivo) {
         atualizaTodosOsDados(dadosVestibulinho);
     } else {
-        // Enquanto não houver arquivo / inativo, define como 'Vestibulinho em Breve!'
+        // Se inativo, define como 'Vestibulinho em Breve!' e abre o modal de aviso
         atualizaVestibulinho(dadosVestibulinho.ano, true);
         configurarModalEmBreve();
     }
