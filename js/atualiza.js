@@ -18,19 +18,54 @@ function atualizaInscricoes(inicio, fim) {
     }
 }
 
-function atualizaVestibulinho(ano) {
+function atualizaVestibulinho(ano, emBreve = false) {
     // Seleciona todos os elementos com name="vestibulinho"
     const elementos = document.getElementsByName('vestibulinho');
     
     // Itera sobre cada elemento encontrado
     elementos.forEach(elemento => {
-        // Atualiza o texto do elemento
-        elemento.textContent = `Vestibulinho ${ano}`;
+        const texto = emBreve ? 'Vestibulinho em Breve!' : `Vestibulinho ${ano}`;
+        const icon = elemento.querySelector('i');
+        if (icon) {
+            elemento.innerHTML = '';
+            elemento.appendChild(icon);
+            elemento.appendChild(document.createTextNode(' ' + texto));
+        } else {
+            elemento.textContent = texto;
+        }
     });
 }
 
 function atualizaDataHorarioProva(curso, data, horario) {
-    document.getElementById('data-prova-curso-' + curso).textContent = `Prova: ${data} às ${horario}`;
+    const el = document.getElementById('data-prova-curso-' + curso);
+    if (el) {
+        el.textContent = horario ? `Prova: ${data} às ${horario}` : `Prova: ${data}`;
+    }
+}
+
+function atualizaCursosVestibulinho(datasProvas, visibilidade) {
+    // Loop pelos cursos de 1 a 3 da ETEP (curso4 do CEMEP é ignorado)
+    for (let i = 1; i <= 3; i++) {
+        const cardCurso = document.getElementById(`card-curso-${i}`);
+        if (!cardCurso) continue;
+
+        const cursoKey = `curso${i}`;
+        const visibilidadeKey = `mostrarCurso${i}`;
+
+        const isVisivel = !visibilidade || visibilidade[visibilidadeKey] !== false;
+        const dadosProva = datasProvas ? datasProvas[cursoKey] : null;
+        const dataValida = dadosProva && dadosProva.data !== null && dadosProva.data !== undefined && String(dadosProva.data).trim() !== '';
+
+        // Se tiver data null ou visibilidade false, o curso NÃO está sendo oferecido e não deve aparecer
+        if (isVisivel && dataValida) {
+            cardCurso.style.display = '';
+            cardCurso.classList.remove('hidden');
+            atualizaDataHorarioProva(i.toString(), dadosProva.data, dadosProva.horario);
+        } else {
+            cardCurso.style.display = 'none';
+            cardCurso.classList.add('hidden');
+        }
+    }
 }
 
 function atualizaDocumentos(documentos) {
@@ -64,22 +99,9 @@ function atualizaTodosOsDados(dados) {
     // Atualiza o ano do vestibulinho
     atualizaVestibulinho(dados.ano);
 
-    // Atualiza as datas e horários das provas para cada curso
-    if (dados.datasProvas && dados.visibilidade) {
-        // Loop pelos cursos de 1 a 3
-        for (let i = 1; i <= 3; i++) {
-            const cursoKey = `curso${i}`;
-            const visibilidadeKey = `mostrarCurso${i}`;
-            
-            // Só atualiza o curso se estiver visível e tiver dados
-            if (dados.visibilidade[visibilidadeKey] && dados.datasProvas[cursoKey]) {
-                atualizaDataHorarioProva(
-                    i.toString(),
-                    dados.datasProvas[cursoKey].data,
-                    dados.datasProvas[cursoKey].horario
-                );
-            }
-        }
+    // Atualiza as datas e horários das provas ou oculta cursos não oferecidos (data null)
+    if (dados.datasProvas || dados.visibilidade) {
+        atualizaCursosVestibulinho(dados.datasProvas, dados.visibilidade);
     }
 
     // Atualiza a lista de documentos
@@ -89,7 +111,6 @@ function atualizaTodosOsDados(dados) {
 
     // Atualiza as inscrições
     if (dados.inscricoes) {
-        // atualizaInscricoes(dados.inscricoes.inicio, dados.inscricoes.fim);
-        atualizaInscricoes('01/09/2025', dados.inscricoes.fim);
+        atualizaInscricoes(dados.inscricoes.inicio || '01/09/2025', dados.inscricoes.fim);
     }
 }

@@ -1,6 +1,6 @@
 async function getDadosVestibulinho() {
     try {
-        const response = await fetch('https://wcpmac.hospedagemelastica.com.br/vestibulinho/documentos/api/etep/');
+        const response = await fetch('https://vestibulinho.etep.com.br/api/arquivos/');
         if (!response.ok) {
             throw new Error(`Erro HTTP: ${response.status}`);
         }
@@ -10,6 +10,7 @@ async function getDadosVestibulinho() {
         console.error('Erro ao buscar dados do vestibulinho:', erro);
         return {
             vestibulinhoAtivo: false,
+            documentos: []
         };
     }
 }
@@ -17,12 +18,18 @@ async function getDadosVestibulinho() {
 (async function() {
     const dadosVestibulinho = await getDadosVestibulinho();
     
-    // Configurações do Vestibulinho (carregadas dinamicamente)
-    window.vestibulinhoAtivo = dadosVestibulinho.vestibulinhoAtivo || false;
+    // Verifica se há pelo menos um documento/arquivo publicado para a ETEP
+    const temDocumentos = Array.isArray(dadosVestibulinho.documentos) && 
+                          dadosVestibulinho.documentos.some(doc => doc.is_etep);
 
-    // Atualiza os dados na página se o vestibulinho estiver ativo
+    // Configurações do Vestibulinho: ativo somente se a flag for true E houver arquivos publicados
+    window.vestibulinhoAtivo = Boolean(dadosVestibulinho.vestibulinhoAtivo && temDocumentos);
+
+    // Se estiver ativo com arquivos, exibe o ano; caso contrário, fica como 'Vestibulinho em Breve!'
     if (window.vestibulinhoAtivo) {
-        atualizaVestibulinho(dadosVestibulinho.ano);
+        atualizaVestibulinho(dadosVestibulinho.ano, false);
+    } else {
+        atualizaVestibulinho(dadosVestibulinho.ano, true);
     }
 })();
 
