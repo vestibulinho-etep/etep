@@ -1,0 +1,32 @@
+{
+  "vestibulinhoAtivo": true,
+  "ano": 2027,
+  "visibilidade": {
+    "mostrarCurso1": true,
+    "mostrarCurso2": true,
+    "mostrarCurso3": false,
+    "mostrarCurso4": false
+  },
+  "datasProvas": {
+    "curso1": {
+      "data": "18/10/2027",
+      "horario": "08:30"
+    },
+    "curso2": {
+      "data": "18/10/2027",
+      "horario": "08:30"
+    },
+    "curso3": {
+      "data": null,
+      "horario": null
+    },
+    "curso4": {
+      "data": "18/10/2027",
+      "horario": "08:30"
+    }
+  },
+  "inscricoes": {
+    "inicio": "14/08/2027",
+    "fim": "02/10/2027"
+  }
+}

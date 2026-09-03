@@ -1,18 +1,35 @@
 async function getDadosVestibulinho() {
+    let dadosApi = {
+        vestibulinhoAtivo: false,
+        documentos: []
+    };
+
     try {
         const response = await fetch('https://vestibulinho.etep.com.br/api/arquivos/');
-        if (!response.ok) {
-            throw new Error(`Erro HTTP: ${response.status}`);
+        if (response.ok) {
+            dadosApi = await response.json();
+        } else {
+            console.error(`Erro HTTP ao buscar API: ${response.status}`);
         }
-        const dados = await response.json();
-        return dados;
     } catch (erro) {
-        console.error('Erro ao buscar dados do vestibulinho:', erro);
-        return {
-            vestibulinhoAtivo: false,
-            documentos: []
-        };
+        console.error('Erro ao buscar dados do vestibulinho da API:', erro);
     }
+
+    try {
+        const prefResponse = await fetch('json/preferencia.json');
+        if (prefResponse.ok) {
+            const preferencia = await prefResponse.json();
+            return {
+                ...preferencia,
+                documentos: dadosApi.documentos || [],
+                _usouPreferencia: true
+            };
+        }
+    } catch (erro) {
+        // Se json/preferencia.json não existir ou falhar, segue com os dados da API
+    }
+
+    return dadosApi;
 }
 
 (async function() {
@@ -22,14 +39,20 @@ async function getDadosVestibulinho() {
     const temDocumentos = Array.isArray(dadosVestibulinho.documentos) && 
                           dadosVestibulinho.documentos.some(doc => doc.is_etep);
 
-    // Configurações do Vestibulinho: ativo somente se a flag for true E houver arquivos publicados
-    window.vestibulinhoAtivo = Boolean(dadosVestibulinho.vestibulinhoAtivo && temDocumentos);
+    // Configurações do Vestibulinho:
+    // Se utilizou preferencia.json, respeita o status definido nele;
+    // Caso contrário, ativo somente se a flag da API for true E houver arquivos publicados
+    if (dadosVestibulinho._usouPreferencia) {
+        window.vestibulinhoAtivo = Boolean(dadosVestibulinho.vestibulinhoAtivo);
+    } else {
+        window.vestibulinhoAtivo = Boolean(dadosVestibulinho.vestibulinhoAtivo && temDocumentos);
+    }
 
     // Atualiza os dados na página se o vestibulinho estiver ativo
     if (window.vestibulinhoAtivo) {
         atualizaTodosOsDados(dadosVestibulinho);
     } else {
-        // Enquanto não houver arquivo, define como 'Vestibulinho em Breve!'
+        // Enquanto não houver arquivo / inativo, define como 'Vestibulinho em Breve!'
         atualizaVestibulinho(dadosVestibulinho.ano, true);
         configurarModalEmBreve();
     }
