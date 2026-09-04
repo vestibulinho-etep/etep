@@ -9,11 +9,11 @@
   },
   "datasProvas": {
     "curso1": {
-      "data": "18/10/2027",
+      "data": "18/10/2026",
       "horario": "08:30"
     },
     "curso2": {
-      "data": "18/10/2027",
+      "data": "18/10/2026",
       "horario": "08:30"
     },
     "curso3": {
@@ -21,7 +21,7 @@
       "horario": null
     },
     "curso4": {
-      "data": "18/10/2027",
+      "data": "18/10/2026",
       "horario": "08:30"
     }
   },
