@@ -232,9 +232,13 @@ async function carregarJsonVestibulinho() {
   return null;
 }
 
-async function carregarDocumentosDaApi() {
+async function carregarDocumentosDaApi(ano) {
+  if (!ano) return [];
+
+  const url = `https://vestibulinho.etep.com.br/api/arquivos/?ano=${encodeURIComponent(ano)}&escola_sigla=ETEP`;
+
   try {
-    const resp = await fetch("https://vestibulinho.etep.com.br/api/arquivos/", {
+    const resp = await fetch(url, {
       cache: "no-store",
     });
     if (resp.ok) {
@@ -242,6 +246,8 @@ async function carregarDocumentosDaApi() {
       if (Array.isArray(data.documentos)) {
         return data.documentos;
       }
+    } else {
+      console.warn(`API de arquivos retornou status HTTP ${resp.status}`);
     }
   } catch (erro) {
     console.warn(
@@ -263,8 +269,8 @@ async function getDadosVestibulinho() {
     cursos: {},
   };
 
-  // 2. Apenas os arquivos/documentos da API externa
-  const documentosApi = await carregarDocumentosDaApi();
+  // 2. Apenas os arquivos/documentos da API externa com ano de vestibulinho.json e escola_sigla=ETEP
+  const documentosApi = await carregarDocumentosDaApi(dadosLocais.ano);
 
   return {
     ...dadosLocais,
