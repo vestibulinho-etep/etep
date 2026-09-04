@@ -153,26 +153,24 @@
                     <div class="bg-blue-50 rounded-lg p-4">
                         <h4 class="font-semibold text-blue-800 mb-2">
                             <i class="fas fa-file-alt mr-2"></i>
-                            Documentos Necessários (originais) - Candidatos a cursos <span class="text-etep-red">Integral</span>
+                            Documentos Necessários (originais) - Candidatos a cursos <span class="text-etep-red">Concomitantes</span>
                         </h4>
                         <ul class="list-disc list-inside text-blue-700 space-y-1">
-                            <li>CIN ou RG e CPF do candidato</li>
-                            <li>CIN ou RG e CPF do responsável</li>
-                            <li>Comprovante de residência de Paulínia</li>
-                            <li>Declaração de matricula: Matriculado e cursando 9º ano do Ensino Fundamental regular no ano de  2025</li>
-                            <li>Inscrição para vagas PCD: laudo médico</li>
+                            <li>RG ou CIN e CPF do candidato</li>
+                            <li>Comprovante de residência atualizado</li>
+                            <li>Declaração de matrícula e frequência no 9º ano do Ensino Fundamental Regular em 2026</li>
                         </ul>
                     </div>
                     <div class="bg-blue-50 rounded-lg p-4">
                         <h4 class="font-semibold text-blue-800 mb-2">
                             <i class="fas fa-file-alt mr-2"></i>
-                            Documentos Necessários (originais) - Candidatos a cursos <span class="text-etep-red">Subsequente</span>
+                            Documentos Necessários (originais) - Candidatos ao curso <span class="text-etep-red">Subsequente</span>
                         </h4>
                         <ul class="list-disc list-inside text-blue-700 space-y-1">
-                            <li>CIN ou RG e CPF do candidato</li>
-                            <li>Comprovante de residência de Paulínia</li>
-                            <li>Histórico do Ensino Médio completo ou declaração de matricula: Matriculado e cursando 3º ano do Ensino Médio no ano de  2025</li>
-                            <li>Inscrição para vagas PCD: laudo médico</li>
+                            <li>RG ou CIN e CPF do candidato</li>
+                            <li>Comprovante de residência atualizado</li>
+                            <li>Para quem está cursando a 3ª série do Ensino Médio em 2026: declaração de matrícula e frequência</li>
+                            <li>Para quem já concluiu o Ensino Médio: histórico escolar, certificado de conclusão ou documento oficial equivalente</li>
                         </ul>
                     </div>
                     <div class="bg-yellow-50 rounded-lg p-4 mt-4">
@@ -192,15 +190,15 @@
     <section class="mb-16">
         <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Cursos Disponíveis</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Curso 1: Técnico em Química Integrado -->
+            <!-- Curso 1: Técnico em Química Concomitante ao Ensino Médio -->
             <div id="card-curso-1" class="vestibulinho-card animate-fade-in">
                 <div class="text-center mb-6">
                     <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-flask text-white text-2xl"></i>
                     </div>
-                    <h3 id="titulo-curso-1" class="text-xl font-bold text-gray-900 mb-2">Técnico em Química</h3>
+                    <h3 id="titulo-curso-1" class="text-xl font-bold text-gray-900 mb-2">Técnico em Química Concomitante ao Ensino Médio</h3>
                     <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
-                        Integrado ao Ensino Médio
+                        Concomitante
                     </span>
                 </div>
                 
@@ -215,7 +213,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span id="data-prova-curso-1" id="data-prova-curso-1">Prova</span>
+                        <span id="data-prova-curso-1">Prova</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
@@ -250,7 +248,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span id="data-prova-curso-2" id="data-prova-curso-2">Prova</span>
+                        <span id="data-prova-curso-2">Prova</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
@@ -285,7 +283,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span id="data-prova-curso-3" id="data-prova-curso-3">Prova</span>
+                        <span id="data-prova-curso-3">Prova</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
@@ -297,23 +295,22 @@
                 </div>
             </div>
 
-            <!-- Curso 4: Técnico em Informática Integrado -->
-            <!--
-            <div class="vestibulinho-card animate-fade-in">
+            <!-- Curso 4: Técnico em Informática Concomitante (CEMEP) -->
+            <div id="card-curso-4" class="vestibulinho-card animate-fade-in hidden" style="display: none;">
                 <div class="text-center mb-6">
                     <div class="w-16 h-16 bg-etep-red rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-laptop-code text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Técnico em Informática</h3>
+                    <h3 id="titulo-curso-4" class="text-xl font-bold text-gray-900 mb-2">Técnico em Informática</h3>
                     <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
-                        Integrado ao Ensino Médio
+                        Concomitante ao Ensino Médio
                     </span>
                 </div>
                 
                 <div class="space-y-3 mb-6 text-gray-600">
                     <div class="flex items-center">
                         <i class="fas fa-school text-etep-red mr-3"></i>
-                        <span>ETEP - Escola Técnica de Paulínia</span>
+                        <span>CEMEP - Centro Municipal de Ensino</span>
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-clock text-etep-red mr-3"></i>
@@ -321,7 +318,7 @@
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-calendar text-etep-red mr-3"></i>
-                        <span>Prova</span>
+                        <span id="data-prova-curso-4">Prova</span>
                     </div>
                 </div>
                 <div class="text-center text-gray-600">
@@ -332,7 +329,6 @@
                     </ul>
                 </div>
             </div>
-            -->
         </div>
     </section>
 </div>
@@ -361,7 +357,7 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Cursos</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html#cursos" class="hover:text-white transition-colors">Técnico em Química Integrado</a></li>
+                        <li><a href="index.html#cursos" class="hover:text-white transition-colors">Técnico em Química Concomitante</a></li>
                         <li><a href="index.html#cursos" class="hover:text-white transition-colors">Técnico em Química Subsequente</a></li>
                         <li><a href="index.html#cursos" class="hover:text-white transition-colors">Técnico em Enfermagem</a></li>
                         <li><a href="vestibulinho.html" name="vestibulinho" class="hover:text-white transition-colors">Vestibulinho</a></li>
@@ -449,7 +445,6 @@
 
 </div> <!-- End Main Content -->
 
-<script src="js/atualiza.js"></script>
-<script src="js/vestibulinho.js"></script>
+<script src="js/vestibulinho.js?v=20260904_2"></script>
 </body>
 </html> 

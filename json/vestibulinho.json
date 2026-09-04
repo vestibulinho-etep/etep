@@ -1,0 +1,66 @@
+{
+  "vestibulinhoAtivo": true,
+  "ano": 2027,
+  "inscricoes": {
+    "inicio": "14/09/2026",
+    "fim": "02/10/2026"
+  },
+  "visibilidade": {
+    "ETEP_QUIMICA_INTEGRAL": true,
+    "ETEP_QUIMICA_NOTURNO": true,
+    "ETEP_ENFERMAGEM_MATUTINO": false,
+    "CEMEP_INFORMATICA_INTEGRAL": false
+  },
+  "datasProvas": {
+    "ETEP_QUIMICA_INTEGRAL": {
+      "data": "18/10/2026",
+      "horario": "08:30"
+    },
+    "ETEP_QUIMICA_NOTURNO": {
+      "data": "18/10/2026",
+      "horario": "08:30"
+    },
+    "ETEP_ENFERMAGEM_MATUTINO": {
+      "data": "18/10/2026",
+      "horario": "08:30"
+    },
+    "CEMEP_INFORMATICA_INTEGRAL": {
+      "data": "18/10/2026",
+      "horario": "08:30"
+    }
+  },
+  "cursos": {
+    "CEMEP_INFORMATICA_INTEGRAL": {
+      "nome": "Técnico em Informática Concomitante ao Ensino Médio",
+      "sigla": "Informática - Ensino Médio",
+      "escola_sigla": "CEMEP",
+      "tipo": "CONCOMITANTE",
+      "duracao_anos": 3.0,
+      "requisitos": "O candidato deve ser estudante que está completando o 9º ano do Ensino Fundamental no mesmo ano da prova do processo seletivo."
+    },
+    "ETEP_QUIMICA_INTEGRAL": {
+      "nome": "Técnico em Química Concomitante ao Ensino Médio",
+      "sigla": "Química - Ensino Médio",
+      "escola_sigla": "ETEP",
+      "tipo": "CONCOMITANTE",
+      "duracao_anos": 3.0,
+      "requisitos": "O candidato deve ser estudante que está completando o 9º ano do Ensino Fundamental no mesmo ano da prova do processo seletivo."
+    },
+    "ETEP_QUIMICA_NOTURNO": {
+      "nome": "Técnico em Química",
+      "sigla": "Química Noturno",
+      "escola_sigla": "ETEP",
+      "tipo": "SUBSEQUENTE",
+      "duracao_anos": 2.0,
+      "requisitos": "O candidato deve ter concluído o Ensino Médio até o ano de realização da prova do processo seletivo."
+    },
+    "ETEP_ENFERMAGEM_MATUTINO": {
+      "nome": "Técnico em Enfermagem",
+      "sigla": "Enfermagem Matutino",
+      "escola_sigla": "ETEP",
+      "tipo": "SUBSEQUENTE",
+      "duracao_anos": 2.0,
+      "requisitos": "O candidato deve ter concluído o Ensino Médio até o ano de realização da prova do processo seletivo."
+    }
+  }
+}
